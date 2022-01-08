@@ -2,72 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="chap4.css">
     <title>EJS4</title>
   </head>
   <body>
-
     <h1>Chapter 4</h1>
-    <script>
+    <p id="ex1">Range no step: <p>
+    <p id="ex2">Range with step: <p>
+    <p id="ex3">Reverse new array: <p>
+    <p id="ex4">Reverse in place: <p>
 
-
-function range(start, end, step = 1) {
-  let nums = [];
-  for (i = start ; i <= end ; i += step)
-  {
-    if (i <= end && i !== 11)
-    {
-      nums.push(i);
-    }
-  }
-  //document.write("<p>" + nums + "</p>");
-  return nums;
-}
-
-function sum(list) {
-  let total = 0;
-  for (let i in list) {
-    total += list[i];
-  }
-  return total;
-}
-
-function reverseArray(list) {
-  let backAss = [];
-  for (i = list.length - 1 ; i >= 0 ; i -= 1) {
-    backAss.push(list[i]);
-  }
-  return backAss;
-}
-
-function reverseArrayInPlace(list) {
-  let end = list.length -1;
-  let flag = list[end];
-  function shifter(list) {
-    if (list[0] != flag) {
-      list.push(list.shift());
-    }
-    else {
-      return sifter(list);
-    }
-    return sifter(list);
-  }
-  return list;
-}
-
-
-
-
-
-console.log(range(1,13,2));
-console.log(sum(range(1,5)));
-console.log(reverseArray(["A", "B", "C"]));
-
-let arrayValue = [1, 2, 3, 4, 5];
-reverseArrayInPlace(arrayValue);
-console.log(arrayValue);
-
-
-  </script>
-
+    <script src="chap4.js"></script>
   </body>
 </html>

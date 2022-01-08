@@ -4,7 +4,7 @@ let writeSpace1 = document.getElementById('ex1');
 let writeSpace2 = document.getElementById('ex2');
 let writeSpace3 = document.getElementById('ex3');
 let writeSpace4 = document.getElementById('ex4');
-let writeSpace5 = document.getElementById('ex5');
+//let writeSpace5 = document.getElementById('ex5');
 
 
 
@@ -16,7 +16,7 @@ function rangeX(start, end, step = 1) {
       nums.push(i);
     }
   }
-  return String(nums.join(" "));
+  return nums.toString();
 
 }
 
@@ -25,7 +25,7 @@ function sumX(list) {
   for (let i in list) {
     total += Number(list[i]);
   }
-  return total;
+  return String(total);
 }
 
 function reverseArray(list) {
@@ -33,29 +33,22 @@ function reverseArray(list) {
   for (i = list.length - 1 ; i >= 0 ; i -= 1) {
     backAss.push(list[i]);
   }
-  return backAss;
+  return backAss.toString();
 }
 
 function reverseArrayInPlace(list) {
-  let end = list.length -1;
-  let flag = list[end];
-  function shifter(list) {
-    if (list[0] != flag) {
-      list.push(list.shift());
-    }
-    else {
-      return sifter(list);
-    }
-    return sifter(list);
+  let end = list.length - 1;
+  let start = 0;
+  while (end > start) {
+    let shelf = list[end];
+    list[end] = list[start];
+    list[start] = shelf;
+    end -= 1;
+    start += 1;
   }
   return list;
 }
 
-
-
-
-
-//let fExA = range(1,13,2);
 
 writeSpace1.textContent += rangeX(1,21,2);
 console.log(rangeX(1,10));
@@ -65,8 +58,7 @@ console.log(sumX(rangeX(10,56,4)));
 writeSpace3.textContent += reverseArray(["A","B","C","D","E"]);
 console.log(reverseArray(["A", "B", "C"]));
 
-writeSpace4.textContent += "Incomplete...";
-
-//let arrayValue = [1, 2, 3, 4, 5];
-//reverseArrayInPlace(arrayValue);
-//console.log(arrayValue);
+let arrayValue = [1, 2, 3, 4, 5];
+writeSpace4.textContent += reverseArrayInPlace(arrayValue);
+arrayValue = [1, 2, 3, 4, 5]; // reset HTML operation for console
+console.log(reverseArrayInPlace(arrayValue));
