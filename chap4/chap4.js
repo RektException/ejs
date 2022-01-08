@@ -1,4 +1,5 @@
 // Global ids
+let arrayValue = [1, 2, 3, 4, 5];
 
 let writeSpace1 = document.getElementById('ex1');
 let writeSpace2 = document.getElementById('ex2');
@@ -7,6 +8,7 @@ let writeSpace4 = document.getElementById('ex4');
 //let writeSpace5 = document.getElementById('ex5');
 
 
+//working part
 
 function rangeX(start, end, step = 1) {
   let nums = [];
@@ -49,16 +51,16 @@ function reverseArrayInPlace(list) {
   return list;
 }
 
-
+// Output 
 writeSpace1.textContent += rangeX(1,21,2);
 console.log(rangeX(1,10));
+
 writeSpace2.textContent += sumX(rangeX(10,56,4));
 console.log(sumX(rangeX(10,56,4)));
 
 writeSpace3.textContent += reverseArray(["A","B","C","D","E"]);
 console.log(reverseArray(["A", "B", "C"]));
 
-let arrayValue = [1, 2, 3, 4, 5];
 writeSpace4.textContent += reverseArrayInPlace(arrayValue);
 arrayValue = [1, 2, 3, 4, 5]; // reset HTML operation for console
 console.log(reverseArrayInPlace(arrayValue));
