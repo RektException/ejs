@@ -1,3 +1,4 @@
+"use strict";
 // Global ids
 let arrayValue = [1, 2, 3, 4, 5];
 
@@ -5,14 +6,26 @@ let writeSpace1 = document.getElementById('ex1');
 let writeSpace2 = document.getElementById('ex2');
 let writeSpace3 = document.getElementById('ex3');
 let writeSpace4 = document.getElementById('ex4');
-//let writeSpace5 = document.getElementById('ex5');
+let writeSpace5 = document.getElementById('ex5');
+let writeSpace6 = document.getElementById('ex6');
+
+let list = {
+value: 1,
+rest: {
+  value: 2,
+  rest: {
+    value: 3,
+    rest: null
+  }
+}
+}
 
 
 //working part
 
 function rangeX(start, end, step = 1) {
   let nums = [];
-  for (i = start ; i <= end ; i += step) {
+  for (let i = start ; i <= end ; i += step) {
     if (i <= end && i !== 11)
     {
       nums.push(i);
@@ -32,7 +45,7 @@ function sumX(list) {
 
 function reverseArray(list) {
   let backAss = [];
-  for (i = list.length - 1 ; i >= 0 ; i -= 1) {
+  for (let i = list.length - 1 ; i >= 0 ; i -= 1) {
     backAss.push(list[i]);
   }
   return backAss.toString();
@@ -51,7 +64,16 @@ function reverseArrayInPlace(list) {
   return list;
 }
 
-// Output 
+function arrayToList(list) {
+  for (let i in list) {
+    let j = list[i];
+    for (let i in j) {
+      console.log(i);
+    }
+  }
+}
+
+// Output
 writeSpace1.textContent += rangeX(1,21,2);
 console.log(rangeX(1,10));
 
@@ -64,3 +86,9 @@ console.log(reverseArray(["A", "B", "C"]));
 writeSpace4.textContent += reverseArrayInPlace(arrayValue);
 arrayValue = [1, 2, 3, 4, 5]; // reset HTML operation for console
 console.log(reverseArrayInPlace(arrayValue));
+
+writeSpace5.textContent += arrayToList([10,20]);
+console.log(arrayToList([10, 20]));
+
+let node = list.this;
+writeSpace6.textContent += null;
